@@ -45,7 +45,7 @@ const CartItems = () => {
                                         {item.discountPercentage > 0 && (
                                             <p className='flex gap-[5px] text-[#C94D00] text-[16px] leading-[18px]'>
                                                 <span className='line-through'>{formatPrice(convertPrice(item.price))}</span>
-                                                <span className='text-[13px] leading-[18px] text-[#C94D00]'>RSD</span>
+                                                <span className='text-[11px] leading-[11px] mb-[5px] text-[#C94D00]'>RSD</span>
                                             </p>
                                         )}
                                     </div>

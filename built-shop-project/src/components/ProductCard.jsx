@@ -70,10 +70,13 @@ const ProductCard = ({ product, showInformations = false, customStyle, hideDefau
           </div>
         )}
 
-        <div className="flex items-center gap-2 product-prices">
-          <p className="text-[24px] leading-[33px] font-semibold mt-2">{formatPrice(convertPrice(discountPrice))} <span className='text-[13px] leading-[18px]'>RSD</span></p>
+        <div className="flex gap-2 items-baseline product-prices">
+          <p className="flex gap-[5px] text-[24px] leading-[33px] font-semibold mt-2">{formatPrice(convertPrice(discountPrice))} <span className='text-[13px] leading-[18px] font-normal'>RSD</span></p>
           {product.discountPercentage > 0 && (
-            <p className="text-[18px] line-through text-red-600">{formatPrice(convertPrice(product.price))} RSD</p>
+            <p className="flex gap-[5px] text-[18px] text-red-600">
+              <span className='line-through'>{formatPrice(convertPrice(product.price))} </span>
+              <span className='text-[13px] leading-[18px] text-[#C94D00]'>RSD</span>
+            </p>
           )}
         </div>
 
