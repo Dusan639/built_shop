@@ -6,7 +6,6 @@ import { formatPrice } from '../utils/formatPrice';
 const OrderSummary = () => {
     const { cartItems } = useSelector(state => state.cart);
 
-    // Funkcija za računanje ukupne cene (s popustom)
     const calculateTotalAmountWithDiscount = () => {
         return cartItems.reduce((acc, item) => {
             const discountPrice = item.discountPercentage > 0
@@ -16,13 +15,12 @@ const OrderSummary = () => {
         }, 0);
     };
 
-    // Funkcija za računanje ukupne uštede
     const calculateTotalSavings = () => {
         return cartItems.reduce((acc, item) => {
             if (item.discountPercentage > 0) {
                 const originalPrice = item.price * item.quantity;
                 const discountPrice = originalPrice - (originalPrice * item.discountPercentage / 100);
-                return acc + (originalPrice - discountPrice); // Dodaj razliku između originalne i snižene cene
+                return acc + (originalPrice - discountPrice); 
             }
             return acc;
         }, 0);

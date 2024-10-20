@@ -6,9 +6,8 @@ const Layout = () => {
 
   return (
     <>
-      {/* Prikazuj Navbar samo ako trenutna ruta nije login page (ruta '/') */}
       {location.pathname !== '/' && <Navbar />}
-      <Outlet /> {/* Ovim renderuješ child rute */}
+      <Outlet /> 
     </>
   );
 };
